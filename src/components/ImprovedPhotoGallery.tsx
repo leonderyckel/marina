@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+// Removed Next.js Image import to use standard img tags
 import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface Photo {
@@ -160,11 +160,9 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
             </div>
           )}
           
-          <Image
+          <img
             src={currentPhoto.src}
             alt={currentPhoto.alt}
-            width={1400}
-            height={1000}
             className="max-h-[75vh] w-auto object-contain transition-opacity duration-300"
             onLoad={() => setImageLoading(false)}
             onError={() => setImageLoading(false)}
@@ -200,11 +198,10 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
                     : 'hover:scale-105 opacity-70 hover:opacity-100'
                 }`}
               >
-                <Image
+                <img
                   src={photo.src}
                   alt={photo.alt}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </button>
             ))}

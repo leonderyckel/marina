@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+// Using standard img tag instead of Next.js Image
 import { useState } from 'react';
 import { siteConfig } from '@/data/simpleData';
 
@@ -19,12 +19,10 @@ const SimpleHero = () => {
             </div>
           </div>
         ) : (
-          <Image
+          <img
             src="/images/worship/background.jpg"
             alt="Vue marina depuis la maison"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
             onError={() => setImageError(true)}
           />
         )}
