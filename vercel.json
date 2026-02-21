@@ -1,9 +1,14 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "git lfs pull && npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["fra1"],
+  "functions": {
+    "src/app/api/photos/[folder]/route.ts": {
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
