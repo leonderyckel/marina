@@ -130,11 +130,9 @@ const SimplePhotoGallery = ({ folder, title, isOpen, onClose }: SimplePhotoGalle
       )}
 
       <div className="relative max-w-5xl max-h-full">
-        <Image
+        <img
           src={photos[selectedPhoto].src}
           alt={photos[selectedPhoto].alt}
-          width={1200}
-          height={900}
           className="max-h-[85vh] w-auto object-contain transition-all duration-300"
         />
         
