@@ -1,13 +1,14 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["fra1"],
   "functions": {
     "src/app/api/photos/[folder]/route.ts": {
-      "maxDuration": 30
+      "maxDuration": 10
     }
+  },
+  "images": {
+    "domains": ["localhost"],
+    "formats": ["image/webp", "image/avif"]
   },
   "headers": [
     {
@@ -32,7 +33,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=86400, s-maxage=31536000"
         }
       ]
     }
