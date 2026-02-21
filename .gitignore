@@ -40,12 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Images - too large for GitHub
-public/images/our-house/*.jpg
-public/images/exterior/*.jpg
-public/images/chambers/*.jpg
-public/images/worship/*.jpg
-public/images/activities/*.jpg
+# Keep all images for Vercel deployment
+# Images are needed for the photo gallery to work
 
-# Keep only README files in image folders
+# Keep README files
 !public/images/**/README.md
