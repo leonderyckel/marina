@@ -1,5 +1,5 @@
 {
-  "buildCommand": "git lfs pull && npm run build",
+  "buildCommand": "./scripts/vercel-build.sh",
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
