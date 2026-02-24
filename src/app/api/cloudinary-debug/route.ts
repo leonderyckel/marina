@@ -18,26 +18,26 @@ export async function GET() {
     return NextResponse.json({
       status: 'success',
       total_found: result.total_count,
-      sample_images: result.resources.slice(0, 20).map(img => ({
+      sample_images: result.resources.slice(0, 20).map((img: any) => ({
         public_id: img.public_id,
         secure_url: img.secure_url,
         filename: img.public_id.split('/').pop(),
       })),
       categories: {
-        exterior: result.resources.filter(img => 
+        exterior: result.resources.filter((img: any) => 
           img.public_id.toLowerCase().includes('dsc_') || 
           img.public_id.toLowerCase().includes('marina') || 
           img.public_id.toLowerCase().includes('view')
         ).length,
-        worship: result.resources.filter(img => 
+        worship: result.resources.filter((img: any) => 
           img.public_id.toLowerCase().includes('church') || 
           img.public_id.toLowerCase().includes('protestant') || 
           img.public_id.toLowerCase().includes('catholic')
         ).length,
-        chambers: result.resources.filter(img => 
+        chambers: result.resources.filter((img: any) => 
           img.public_id.toLowerCase().includes('chambre')
         ).length,
-        activities: result.resources.filter(img => 
+        activities: result.resources.filter((img: any) => 
           img.public_id.toLowerCase().includes('beach') || 
           img.public_id.toLowerCase().includes('muizenberg')
         ).length,
