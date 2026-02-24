@@ -10,42 +10,25 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const menuItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#photos', label: 'Photos' },
-    { href: '#activities', label: 'Activities' },
-    { href: '#worship', label: 'Worship' },
-    { href: '#location', label: 'Location' },
-  ];
-
   return (
     <header className="bg-white/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="#home" className="text-2xl font-bold text-blue-600">
-            Marina Da Gama
+            Marina Da Gama House
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Desktop Menu - Simplified */}
+          <div className="hidden md:flex items-center">
             <a
               href={siteConfig.airbnbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold shadow-lg"
             >
               Book on Airbnb
             </a>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -60,30 +43,21 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Simplified */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-2 pt-4">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 py-2 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+          <div className="md:hidden pb-4 border-t border-gray-200">
+            <div className="pt-4">
               <a
                 href={siteConfig.airbnbUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-center mt-2"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-center block shadow-lg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Book on Airbnb
               </a>
             </div>
-          </nav>
+          </div>
         )}
       </div>
     </header>

@@ -1,58 +1,58 @@
-// Structure simplifiée du site
+// Simplified site structure
 export const sections = [
   {
-    id: 'maison-exterieur',
-    title: 'La Maison & Extérieur',
-    subtitle: 'Découvrez votre refuge face à la marina',
+    id: 'house-exterior',
+    title: 'House & Exterior',
+    subtitle: 'Discover your marina-front retreat',
     icon: '🏡',
-    folder: 'our-house',
-    description: 'Intérieur moderne et espaces extérieurs avec vue marina',
+    folder: 'exterior',
+    description: 'Modern interior and outdoor spaces with marina views',
     backgroundColor: 'bg-blue-50',
     textColor: 'text-blue-900'
   },
   {
-    id: 'chambres',
-    title: 'Les Chambres',
-    subtitle: 'Confort et tranquillité pour tous',
+    id: 'bedrooms',
+    title: 'Bedrooms',
+    subtitle: 'Comfort and tranquility for all',
     icon: '🛏️',
     folder: 'chambers',
-    description: '3 chambres confortables avec vue sur la marina',
+    description: '3 comfortable bedrooms with marina views',
     backgroundColor: 'bg-green-50',
     textColor: 'text-green-900'
   },
   {
-    id: 'activites',
-    title: 'Activités & Alentours',
-    subtitle: 'Sports nautiques et découvertes',
+    id: 'activities',
+    title: 'Activities & Surroundings',
+    subtitle: 'Water sports and discoveries',
     icon: '🚣',
     folder: 'activities',
-    description: 'Kayak gratuit, surf, et attractions à proximité',
+    description: 'Free kayaking, surfing, and nearby attractions',
     backgroundColor: 'bg-cyan-50',
     textColor: 'text-cyan-900'
   },
   {
-    id: 'localisation',
-    title: 'Localisation & Points d\'Intérêt',
-    subtitle: 'Au cœur de Marina Da Gama',
+    id: 'location',
+    title: 'Location & Points of Interest',
+    subtitle: 'In the heart of Marina Da Gama',
     icon: '📍',
     folder: 'worship',
-    description: 'Position stratégique avec tous les services à proximité',
+    description: 'Strategic position with all services nearby',
     backgroundColor: 'bg-purple-50',
     textColor: 'text-purple-900',
     showMap: true
   }
 ];
 
-// Points d'intérêt pour la carte
+// Points of interest for the map
 export const pointsOfInterest = [
-  // Plages & Sports nautiques
+  // Beaches & Water Sports
   {
     name: 'Muizenberg Beach',
     type: 'beach',
     icon: '🏄‍♂️',
     distance: '3 min',
     coordinates: [-34.1050, 18.4679],
-    description: 'Plage de surf mondialement connue avec cabines colorées'
+    description: 'World-famous surf beach with colorful beach huts'
   },
   {
     name: 'Fish Hoek Beach',
@@ -60,7 +60,7 @@ export const pointsOfInterest = [
     icon: '🏊‍♂️',
     distance: '10 min',
     coordinates: [-34.1377, 18.4308],
-    description: 'Plage familiale protégée, parfaite pour la baignade'
+    description: 'Protected family beach, perfect for swimming'
   },
   
   // Villages & Culture
@@ -70,7 +70,7 @@ export const pointsOfInterest = [
     icon: '🎨',
     distance: '8 min',
     coordinates: [-34.1282, 18.4481],
-    description: 'Village bohème avec galeries d\'art et restaurants'
+    description: 'Bohemian village with art galleries and restaurants'
   },
   {
     name: 'St James Tidal Pool',
@@ -78,17 +78,17 @@ export const pointsOfInterest = [
     icon: '🏊',
     distance: '10 min',
     coordinates: [-34.1200, 18.4550],
-    description: 'Piscine naturelle d\'eau de mer chauffée'
+    description: 'Natural heated seawater tidal pool'
   },
   
-  // Vignobles & Gastronomie
+  // Wineries & Gastronomy
   {
     name: 'Klein Constantia Wine Estate',
     type: 'wine',
     icon: '🍷',
     distance: '15 min',
     coordinates: [-34.0150, 18.4100],
-    description: 'Domaine vinicole historique avec dégustations'
+    description: 'Historic wine estate with tastings'
   },
   {
     name: 'Groot Constantia',
@@ -96,7 +96,7 @@ export const pointsOfInterest = [
     icon: '🍇',
     distance: '18 min',
     coordinates: [-34.0200, 18.4200],
-    description: 'Plus ancien domaine vinicole d\'Afrique du Sud'
+    description: 'South Africa\'s oldest wine estate'
   },
   {
     name: 'Steenberg Wine Estate',
@@ -104,17 +104,17 @@ export const pointsOfInterest = [
     icon: '🥂',
     distance: '20 min',
     coordinates: [-34.0800, 18.4300],
-    description: 'Vignoble premium avec restaurant gastronomique'
+    description: 'Premium vineyard with gourmet restaurant'
   },
   
-  // Nature & Animaux
+  // Nature & Wildlife
   {
     name: 'Boulders Beach Penguins',
     type: 'wildlife',
     icon: '🐧',
     distance: '15 min',
     coordinates: [-34.1975, 18.4500],
-    description: '3000 pingouins africains dans leur habitat naturel'
+    description: '3000 African penguins in their natural habitat'
   },
   {
     name: 'Cape Point Nature Reserve',
@@ -122,7 +122,7 @@ export const pointsOfInterest = [
     icon: '🏔️',
     distance: '35 min',
     coordinates: [-34.3570, 18.4963],
-    description: 'Falaises spectaculaires et phare au bout de l\'Afrique'
+    description: 'Spectacular cliffs and lighthouse at the tip of Africa'
   },
   {
     name: 'Table Mountain',
@@ -130,7 +130,7 @@ export const pointsOfInterest = [
     icon: '🚠',
     distance: '40 min',
     coordinates: [-33.9628, 18.4098],
-    description: 'Téléphérique vers le sommet, vues à 360°'
+    description: 'Cable car to the summit, 360° views'
   },
   {
     name: 'Chapman\'s Peak Drive',
@@ -138,17 +138,17 @@ export const pointsOfInterest = [
     icon: '🛣️',
     distance: '25 min',
     coordinates: [-34.1580, 18.3720],
-    description: 'Une des routes côtières les plus spectaculaires au monde'
+    description: 'One of the world\'s most spectacular coastal routes'
   },
   
-  // Aventures spéciales
+  // Special Adventures
   {
     name: 'Whale Watching Hermanus',
     type: 'wildlife',
     icon: '🐋',
     distance: '75 min',
     coordinates: [-34.4187, 19.2345],
-    description: 'Observation des baleines depuis la côte (juin-novembre)'
+    description: 'Land-based whale watching (June-November)'
   },
   {
     name: 'V&A Waterfront',
@@ -156,7 +156,7 @@ export const pointsOfInterest = [
     icon: '🛍️',
     distance: '35 min',
     coordinates: [-33.9024, 18.4190],
-    description: 'Shopping, restaurants et aquarium Two Oceans'
+    description: 'Shopping, restaurants and Two Oceans Aquarium'
   },
   {
     name: 'Lion\'s Head Hike',
@@ -164,21 +164,21 @@ export const pointsOfInterest = [
     icon: '🦁',
     distance: '45 min',
     coordinates: [-33.9361, 18.4075],
-    description: 'Randonnée populaire avec vues époustouflantes'
+    description: 'Popular hike with breathtaking views'
   }
 ];
 
-// Configuration générale
+// General configuration
 export const siteConfig = {
-  title: "Marina Da Gama House - Vue Marina",
-  subtitle: "Séjour paisible au bord de la marina à Muizenberg",
-  description: "Maison charmante dans le quartier paisible de Marina Da Gama. Vue exceptionnelle sur la marina, à quelques minutes de la célèbre plage de Muizenberg.",
-  airbnbUrl: "https://www.airbnb.com/rooms/your-listing-id",
+  title: "Marina Da Gama House - Marina View",
+  subtitle: "Peaceful stay by the marina in Muizenberg",
+  description: "Charming house in the peaceful Marina Da Gama neighborhood. Exceptional marina view, just minutes from famous Muizenberg Beach.",
+  airbnbUrl: "https://airbnb.co.za/h/birdsongcastle",
   coordinates: [-34.0928, 18.4569], // Marina Da Gama
   keyFeatures: [
-    { icon: '🚣', text: 'Kayaks inclus' },
-    { icon: '🏄‍♂️', text: 'Surf à 3min' },
-    { icon: '🌊', text: 'Vue marina' },
-    { icon: '🅿️', text: 'Parking privé' }
+    { icon: '🚣', text: 'Free Kayaks' },
+    { icon: '🏄‍♂️', text: 'Surf 3min away' },
+    { icon: '🌊', text: 'Marina View' },
+    { icon: '🅿️', text: 'Private Parking' }
   ]
 };

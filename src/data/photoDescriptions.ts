@@ -1,190 +1,190 @@
-// Descriptions intelligentes basées sur l'analyse des photos
+// Intelligent descriptions based on photo analysis
 export const photoDescriptions: { [key: string]: { alt: string; description: string; category: string } } = {
-  // Photos de piscine et extérieur - DSC_1833
+  // Pool and exterior photos - DSC_1833
   'DSC_1833.jpg': {
-    alt: 'Piscine privée avec vue sur la marina',
-    description: 'Magnifique piscine privée entourée d\'une terrasse spacieuse avec vue sur Marina Da Gama et les montagnes',
+    alt: 'Private pool with marina view',
+    description: 'Beautiful private pool surrounded by spacious terrace with view of Marina Da Gama and mountains',
     category: 'piscine'
   },
   
-  // Ponton privé - DSC_1836 
+  // Private jetty - DSC_1836 
   'DSC_1836.jpg': {
-    alt: 'Ponton privé avec accès direct à la marina',
-    description: 'Votre ponton privé en bois avec accès direct aux canaux de Marina Da Gama - parfait pour les kayaks',
+    alt: 'Private wooden jetty with direct marina access',
+    description: 'Your private wooden jetty with direct access to Marina Da Gama canals - perfect for kayaks',
     category: 'marina'
   },
   
-  // Vue panoramique marina - DSC_1840
+  // Marina panoramic view - DSC_1840
   'DSC_1840.jpg': {
-    alt: 'Vue panoramique sur Marina Da Gama depuis la terrasse',
-    description: 'Vue époustouflante sur les canaux de Marina Da Gama depuis votre terrasse privée',
+    alt: 'Panoramic view of Marina Da Gama from terrace',
+    description: 'Breathtaking view of Marina Da Gama canals from your private terrace',
     category: 'vue'
   },
   
-  // Terrasse avec piscine et vue - DSC_1841
+  // Terrace with pool and view - DSC_1841
   'DSC_1841.jpg': {
-    alt: 'Terrasse principale avec salon extérieur et piscine',
-    description: 'Espace détente extérieur avec salon de jardin, piscine et vue directe sur la marina',
+    alt: 'Main terrace with outdoor lounge and pool',
+    description: 'Outdoor relaxation space with garden furniture, pool and direct marina view',
     category: 'terrasse'
   },
   
-  // Vue depuis la terrasse - DSC_1844
+  // View from terrace - DSC_1844
   'DSC_1844.jpg': {
-    alt: 'Vue depuis la terrasse sur Marina Da Gama',
-    description: 'Panorama exceptionnel sur les maisons flottantes et canaux de Marina Da Gama',
+    alt: 'View from terrace over Marina Da Gama',
+    description: 'Exceptional panorama over floating homes and canals of Marina Da Gama',
     category: 'vue'
   },
 
-  // Chambre avec lits jumeaux - chambre 1 (2)
+  // Twin bedroom - chambre 1 (2)
   'chambre 1 (2).jpg': {
-    alt: 'Chambre lumineuse avec lits jumeaux',
-    description: 'Chambre spacieuse et lumineuse avec deux lits simples, bureau et grandes fenêtres',
+    alt: 'Bright bedroom with twin beds',
+    description: 'Spacious and bright bedroom with two single beds, desk and large windows',
     category: 'chambre'
   },
 
-  // Photos supplémentaires qu'on peut déduire par nom
+  // Additional photos we can deduce by name
   'marina da gama view 1.jpg': {
-    alt: 'Vue aérienne de Marina Da Gama',
-    description: 'Vue panoramique sur le quartier résidentiel de Marina Da Gama et ses canaux',
+    alt: 'Aerial view of Marina Da Gama',
+    description: 'Panoramic view of the Marina Da Gama residential area and its canals',
     category: 'vue'
   },
   
   'marina da gama view 2.jpg': {
-    alt: 'Canaux de Marina Da Gama',
-    description: 'Les paisibles canaux bordés de maisons dans le quartier de Marina Da Gama',
+    alt: 'Marina Da Gama canals',
+    description: 'Peaceful canals lined with houses in the Marina Da Gama neighborhood',
     category: 'marina'
   },
   
   'muizenberg beach .jpg': {
-    alt: 'Plage de Muizenberg avec cabines colorées',
-    description: 'La célèbre plage de Muizenberg avec ses cabines victoriennes colorées - à 3 minutes de la maison',
+    alt: 'Muizenberg Beach with colorful huts',
+    description: 'Famous Muizenberg Beach with colorful Victorian beach huts - 3 minutes from the house',
     category: 'plage'
   },
   
   'view from the house.jpg': {
-    alt: 'Vue directe depuis la maison',
-    description: 'La vue que vous aurez chaque matin depuis votre fenêtre - pure tranquillité sur la marina',
+    alt: 'Direct view from the house',
+    description: 'The view you will have every morning from your window - pure tranquility over the marina',
     category: 'vue'
   }
 };
 
-// Classification automatique par type de contenu
+// Automatic classification by content type
 export const photoCategories = {
   piscine: {
-    title: 'Piscine & Détente',
+    title: 'Pool & Relaxation',
     icon: '🏊‍♂️',
-    description: 'Espace piscine privée pour se rafraîchir'
+    description: 'Private pool area to cool off'
   },
   marina: {
-    title: 'Accès Marina',
+    title: 'Marina Access',
     icon: '⛵',
-    description: 'Accès direct aux canaux et activités nautiques'
+    description: 'Direct access to canals and water activities'
   },
   terrasse: {
-    title: 'Espaces Extérieurs',
+    title: 'Outdoor Spaces',
     icon: '🌿',
-    description: 'Terrasses et jardins pour profiter du plein air'
+    description: 'Terraces and gardens to enjoy the outdoors'
   },
   vue: {
-    title: 'Vues Panoramiques',
+    title: 'Panoramic Views',
     icon: '🌅',
-    description: 'Les vues spectaculaires depuis la propriété'
+    description: 'Spectacular views from the property'
   },
   chambre: {
-    title: 'Chambres',
+    title: 'Bedrooms',
     icon: '🛏️',
-    description: 'Espaces de repos confortables et lumineux'
+    description: 'Comfortable and bright sleeping spaces'
   },
   salon: {
-    title: 'Espaces de Vie',
+    title: 'Living Areas',
     icon: '🛋️',
-    description: 'Salon et espaces de détente intérieurs'
+    description: 'Lounge and indoor relaxation spaces'
   },
   cuisine: {
-    title: 'Cuisine',
+    title: 'Kitchen',
     icon: '🍽️',
-    description: 'Cuisine moderne entièrement équipée'
+    description: 'Fully equipped modern kitchen'
   },
   salle_bain: {
-    title: 'Salles de Bain',
+    title: 'Bathrooms',
     icon: '🚿',
-    description: 'Salles de bain modernes et fonctionnelles'
+    description: 'Modern and functional bathrooms'
   },
   plage: {
-    title: 'Plages Nearby',
+    title: 'Nearby Beaches',
     icon: '🏖️',
-    description: 'Plages magnifiques à quelques minutes'
+    description: 'Beautiful beaches just minutes away'
   }
 };
 
-// Fonction pour deviner la catégorie si pas dans la base
+// Function to guess category if not in database
 export function guessPhotoCategory(filename: string): { alt: string; description: string; category: string } {
   const name = filename.toLowerCase();
   
-  // Chambres
+  // Bedrooms
   if (name.includes('chambre') || name.includes('bedroom')) {
     return {
-      alt: 'Chambre confortable avec vue',
-      description: 'Chambre spacieuse et lumineuse avec tout le confort nécessaire',
+      alt: 'Comfortable bedroom with view',
+      description: 'Spacious and bright bedroom with all necessary comfort',
       category: 'chambre'
     };
   }
   
-  // Vues et extérieur
+  // Views and exterior
   if (name.includes('view') || name.includes('vue') || name.includes('marina')) {
     return {
-      alt: 'Vue magnifique sur Marina Da Gama',
-      description: 'Panorama exceptionnel sur les canaux paisibles de Marina Da Gama',
+      alt: 'Beautiful view of Marina Da Gama',
+      description: 'Exceptional panorama over the peaceful canals of Marina Da Gama',
       category: 'vue'
     };
   }
   
-  // Plage et activités
+  // Beach and activities
   if (name.includes('beach') || name.includes('plage') || name.includes('muizenberg')) {
     return {
-      alt: 'Activités à proximité',
-      description: 'Attractions et activités dans les environs immédiats',
+      alt: 'Nearby activities',
+      description: 'Attractions and activities in the immediate surroundings',
       category: 'plage'
     };
   }
   
-  // Numéros DSC - classification par numéro
+  // DSC numbers - classification by number
   const dscMatch = name.match(/dsc[_-]?(\d+)/);
   if (dscMatch) {
     const num = parseInt(dscMatch[1]);
     
-    // 1833-1844: Extérieur, piscine, terrasse
+    // 1833-1844: Exterior, pool, terrace
     if (num >= 1833 && num <= 1844) {
       return {
-        alt: 'Espace extérieur avec piscine et vue marina',
-        description: 'Magnifique espace extérieur avec piscine, terrasse et vue directe sur la marina',
+        alt: 'Outdoor space with pool and marina view',
+        description: 'Beautiful outdoor space with pool, terrace and direct marina view',
         category: 'piscine'
       };
     }
     
-    // 1850-1870: Intérieur maison
+    // 1850-1870: House interior
     if (num >= 1850 && num <= 1870) {
       return {
-        alt: 'Intérieur moderne et spacieux',
-        description: 'Espaces de vie intérieurs modernes et confortables avec vue sur l\'eau',
+        alt: 'Modern and spacious interior',
+        description: 'Modern and comfortable indoor living spaces with water view',
         category: 'salon'
       };
     }
     
-    // 1890+: Chambres et espaces privés
+    // 1890+: Bedrooms and private spaces
     if (num >= 1890) {
       return {
-        alt: 'Espaces de repos et chambres',
-        description: 'Chambres confortables et espaces privés pour un séjour relaxant',
+        alt: 'Rest areas and bedrooms',
+        description: 'Comfortable bedrooms and private spaces for a relaxing stay',
         category: 'chambre'
       };
     }
   }
   
-  // Par défaut
+  // Default
   return {
-    alt: 'Belle photo de la propriété',
-    description: 'Découvrez les espaces magnifiques de votre séjour à Marina Da Gama',
+    alt: 'Beautiful property photo',
+    description: 'Discover the magnificent spaces of your stay at Marina Da Gama',
     category: 'general'
   };
 }

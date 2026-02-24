@@ -178,7 +178,7 @@ export const testimonials = [
 
 // Configuration
 export const siteConfig = {
-  airbnbUrl: "https://www.airbnb.com/rooms/your-listing-id", // Replace with actual Airbnb URL
+  airbnbUrl: "https://airbnb.co.za/h/birdsongcastle", // Updated Airbnb URL
   bookingUrgency: {
     enabled: true,
     recentBookings: 12,
