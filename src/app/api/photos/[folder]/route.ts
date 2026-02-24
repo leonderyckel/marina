@@ -37,15 +37,28 @@ export async function GET(
         
         switch (folder) {
           case 'exterior':
-            return publicId.includes('dsc_') || publicId.includes('marina') || publicId.includes('view') || filename.startsWith('dsc_');
+            // Photos extérieures: piscine, terrasse, vue marina - DSC photos des espaces externes
+            return (publicId.includes('dsc_') && 
+                   (filename.includes('dsc_183') || filename.includes('dsc_184') || filename.includes('dsc_185') || 
+                    filename.includes('dsc_186') || filename.includes('dsc_187') || filename.includes('dsc_188'))) ||
+                   publicId.includes('marina') || publicId.includes('view');
           case 'our-house':
-            return publicId.includes('house') || publicId.includes('chambre') || filename.includes('chambre');
+            // Intérieur maison: salon, cuisine - DSC photos intérieures (DSC_185x-187x)
+            return (publicId.includes('dsc_') && 
+                   (filename.includes('dsc_185') || filename.includes('dsc_186') || filename.includes('dsc_187'))) ||
+                   publicId.includes('house') || publicId.includes('salon') || publicId.includes('kitchen');
           case 'worship':
-            return publicId.includes('church') || publicId.includes('protestant') || publicId.includes('catholic') || publicId.includes('anglican');
+            // Lieux de culte
+            return publicId.includes('church') || publicId.includes('protestant') || publicId.includes('catholic') || 
+                   publicId.includes('anglican') || publicId.includes('synagogue') || publicId.includes('mosque') ||
+                   publicId.includes('masjid');
           case 'activities':
-            return publicId.includes('beach') || publicId.includes('muizenberg') || publicId.includes('hope');
+            // Activités: plages, attractions
+            return publicId.includes('beach') || publicId.includes('muizenberg') || publicId.includes('hope') ||
+                   publicId.includes('constantia') || filename.includes('hope') || filename.includes('beach');
           case 'chambers':
-            return publicId.includes('chambre') || publicId.includes('bedroom');
+            // Chambres uniquement - photos avec "chambre" dans le nom
+            return publicId.includes('chambre') && !filename.startsWith('dsc_');
           default:
             return false;
         }

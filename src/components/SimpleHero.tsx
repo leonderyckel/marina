@@ -20,8 +20,8 @@ const SimpleHero = () => {
           </div>
         ) : (
           <img
-            src="/images/worship/background.jpg"
-            alt="Vue marina depuis la maison"
+            src="https://res.cloudinary.com/df42ozttq/image/upload/v1771692293/DSC_1833_v5ont5.jpg"
+            alt="Vue marina depuis la maison avec piscine et terrasse"
             className="w-full h-full object-cover"
             onError={() => setImageError(true)}
           />
