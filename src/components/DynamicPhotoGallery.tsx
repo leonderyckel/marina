@@ -76,25 +76,25 @@ const DynamicPhotoGallery = ({ folderPath, folderType, isOpen, onClose }: Dynami
   };
 
   const generateDescription = (filename: string, folderType: string) => {
-    // Descriptions spécifiques basées sur le nom du fichier
+    // Specific descriptions based on filename
     const specificDescriptions: { [key: string]: string } = {
-      'DSC_1833': 'Salon spacieux avec vue sur la marina',
-      'DSC_1836': 'Cuisine moderne entièrement équipée',
-      'DSC_1840': 'Chambre principale avec vue sur l\'eau',
-      'DSC_1841': 'Salle de bain moderne et lumineuse',
-      'DSC_1844': 'Terrasse privée avec accès direct à la marina',
-      'test-photo': 'Photo d\'ambiance de votre futur séjour',
-      'marina da gama view 1': 'Vue panoramique sur Marina Da Gama',
-      'marina da gama view 2': 'Les canaux paisibles de Marina Da Gama',
-      'view from the house': 'Vue directe depuis votre maison',
-      'muizenberg beach': 'Plage de Muizenberg à 3 minutes',
-      'catholic church St james': 'Église catholique Saint-James',
-      'anglican church constantia': 'Église anglicane de Constantia',
-      'protestan church kalk bay': 'Église protestante de Kalk Bay',
-      'synagogue muizenberg': 'Synagogue de Muizenberg',
-      'habibia soofie Saheb Masjid': 'Mosquée Habibia Soofie Saheb',
-      'good hope view1': 'Vue spectaculaire sur Good Hope',
-      'good hpe view 2': 'Paysage du Cap de Bonne-Espérance'
+      'DSC_1833': 'Spacious living room with marina view',
+      'DSC_1836': 'Modern fully equipped kitchen',
+      'DSC_1840': 'Master bedroom with water view',
+      'DSC_1841': 'Modern and bright bathroom',
+      'DSC_1844': 'Private terrace with direct marina access',
+      'test-photo': 'Ambiance photo of your future stay',
+      'marina da gama view 1': 'Panoramic view of Marina Da Gama',
+      'marina da gama view 2': 'Peaceful canals of Marina Da Gama',
+      'view from the house': 'Direct view from your house',
+      'muizenberg beach': 'Muizenberg Beach 3 minutes away',
+      'catholic church St james': 'Saint-James Catholic Church',
+      'anglican church constantia': 'Constantia Anglican Church',
+      'protestan church kalk bay': 'Kalk Bay Protestant Church',
+      'synagogue muizenberg': 'Muizenberg Synagogue',
+      'habibia soofie Saheb Masjid': 'Habibia Soofie Saheb Mosque',
+      'good hope view1': 'Spectacular view of Good Hope',
+      'good hpe view 2': 'Cape of Good Hope landscape'
     };
 
     const filenameKey = filename.replace(/\.(jpg|jpeg|png|webp)$/i, '');
@@ -103,13 +103,13 @@ const DynamicPhotoGallery = ({ folderPath, folderType, isOpen, onClose }: Dynami
     }
 
     const descriptions: { [key: string]: string } = {
-      'our-house': 'Intérieur magnifique de votre maison Marina Da Gama',
-      'exterior': 'Espaces extérieurs et vue sur la marina',
-      'activities': 'Sports nautiques et activités passionnantes',
-      'worship': 'Lieux de culte et spiritualité locaux'
+      'our-house': 'Beautiful interior of your Marina Da Gama house',
+      'exterior': 'Outdoor spaces and marina view',
+      'activities': 'Water sports and exciting activities',
+      'worship': 'Local places of worship and spirituality'
     };
     
-    return descriptions[folderType] || 'Belle vue à Marina Da Gama';
+    return descriptions[folderType] || 'Beautiful view at Marina Da Gama';
   };
 
   const nextPhoto = () => {

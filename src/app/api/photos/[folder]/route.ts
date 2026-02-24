@@ -53,9 +53,13 @@ export async function GET(
                    publicId.includes('anglican') || publicId.includes('synagogue') || publicId.includes('mosque') ||
                    publicId.includes('masjid');
           case 'activities':
-            // Activités: plages, attractions
+            // Activities: beaches, attractions, birding, hiking, nature experiences
             return publicId.includes('beach') || publicId.includes('muizenberg') || publicId.includes('hope') ||
-                   publicId.includes('constantia') || filename.includes('hope') || filename.includes('beach');
+                   publicId.includes('constantia') || filename.includes('hope') || filename.includes('beach') ||
+                   filename.includes('tryn') || filename.includes('hiking') || filename.includes('nature') ||
+                   filename.includes('bird') || filename.includes('trail') || filename.includes('walk') ||
+                   // Include UUID-style filenames which are likely new activity photos
+                   /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/.test(filename);
           case 'chambers':
             // Chambres uniquement - photos avec "chambre" dans le nom
             return publicId.includes('chambre') && !filename.startsWith('dsc_');
