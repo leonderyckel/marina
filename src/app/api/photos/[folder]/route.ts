@@ -31,7 +31,7 @@ export async function GET(
         .max_results(500)
         .execute();
       
-      allImages = result.resources.filter(image => {
+      allImages = result.resources.filter((image: any) => {
         const publicId = image.public_id.toLowerCase();
         const filename = image.public_id.split('/').pop()?.toLowerCase() || '';
         
@@ -57,8 +57,8 @@ export async function GET(
     const uniqueImages = Array.from(new Map(allImages.map(img => [img.public_id, img])).values());
 
     const photos = uniqueImages
-      .filter(image => image.resource_type === 'image')
-      .map(image => {
+      .filter((image: any) => image.resource_type === 'image')
+      .map((image: any) => {
         const originalName = image.public_id.split('/').pop() + '.jpg';
         const photoInfo = photoDescriptions[originalName] || guessPhotoCategory(originalName);
         
