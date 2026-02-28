@@ -67,6 +67,9 @@ export async function GET(
                    filename.includes('tryn') || filename.includes('hiking') || filename.includes('nature') ||
                    filename.includes('bird') || filename.includes('trail') || filename.includes('walk') ||
                    filename.includes('surf') || publicId.includes('surf') ||
+                   publicId.includes('penguins') || filename.includes('penguins') ||
+                   filename.includes('dsc_4225') || publicId.includes('dsc_4225') ||
+                   filename.includes('cape_town') || publicId.includes('cape_town') ||
                    // Include UUID-style filenames which are likely new activity photos
                    /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/.test(filename);
           case 'chambers':

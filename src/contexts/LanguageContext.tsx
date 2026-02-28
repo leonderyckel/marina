@@ -63,6 +63,11 @@ const translations = {
     bookThisExperience: 'Book This Experience',
     close: 'Close',
     highlights: 'Highlights:',
+    
+    // Worship Section
+    worshipPlaces: 'Places of Worship',
+    worshipDescription: 'Discover the beautiful religious sites around Muizenberg',
+    worshipContent: 'Visit the diverse religious communities in our area - Anglican churches, Catholic churches, Protestant churches, and the local synagogue.',
   },
   fr: {
     // Header
@@ -116,6 +121,11 @@ const translations = {
     bookThisExperience: 'Réserver cette expérience',
     close: 'Fermer',
     highlights: 'Points forts :',
+    
+    // Worship Section
+    worshipPlaces: 'Lieux de Culte',
+    worshipDescription: 'Découvrez les beaux sites religieux autour de Muizenberg',
+    worshipContent: 'Visitez les diverses communautés religieuses de notre région - églises anglicanes, églises catholiques, églises protestantes, et la synagogue locale.',
   }
 };
 

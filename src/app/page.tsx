@@ -7,6 +7,7 @@ import SimpleSection from '@/components/SimpleSection';
 import SimpleMap from '@/components/SimpleMap';
 import ImprovedPhotoGallery from '@/components/ImprovedPhotoGallery';
 import BirdingExperiences from '@/components/BirdingExperiences';
+import WorshipSection from '@/components/WorshipSection';
 import BookingBanner from '@/components/BookingBanner';
 import CustomIcon from '@/components/CustomIcon';
 import { sections } from '@/data/simpleData';
@@ -70,6 +71,9 @@ export default function Home() {
       
       {/* Birding Experiences */}
       <BirdingExperiences />
+      
+      {/* Worship Section */}
+      <WorshipSection />
       
       <BookingBanner />
 
