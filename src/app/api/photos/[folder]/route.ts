@@ -54,10 +54,19 @@ export async function GET(
                    publicId.includes('masjid');
           case 'activities':
             // Activities: beaches, attractions, birding, hiking, nature experiences
+            // EXCLUDE worship places explicitly
+            const isWorshipPhoto = publicId.includes('church') || publicId.includes('protestant') || 
+                                  publicId.includes('catholic') || publicId.includes('anglican') || 
+                                  publicId.includes('synagogue') || publicId.includes('mosque') ||
+                                  publicId.includes('masjid');
+            
+            if (isWorshipPhoto) return false;
+            
             return publicId.includes('beach') || publicId.includes('muizenberg') || publicId.includes('hope') ||
-                   publicId.includes('constantia') || filename.includes('hope') || filename.includes('beach') ||
+                   filename.includes('hope') || filename.includes('beach') ||
                    filename.includes('tryn') || filename.includes('hiking') || filename.includes('nature') ||
                    filename.includes('bird') || filename.includes('trail') || filename.includes('walk') ||
+                   filename.includes('surf') || publicId.includes('surf') ||
                    // Include UUID-style filenames which are likely new activity photos
                    /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/.test(filename);
           case 'chambers':

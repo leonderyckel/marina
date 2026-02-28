@@ -186,7 +186,7 @@ export const siteConfig = {
   subtitle: "Peaceful stay by the marina in Muizenberg",
   description: "Fully equipped house in the peaceful Marina Da Gama neighborhood. Exceptional marina view, just minutes from famous Muizenberg Beach.",
   airbnbUrl: "https://airbnb.co.za/h/birdsongcastle",
-  coordinates: [-34.0928, 18.4569], // Marina Da Gama
+  coordinates: [-34.1058, 18.4742], // 4 de Lille Square, Muizenberg
   keyFeatures: [
     { icon: '🚲', text: 'Free Pedalos' },
     { icon: '🏄‍♂️', text: 'Surf 3min away' },
