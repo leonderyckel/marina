@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ImprovedPhotoGallery from './ImprovedPhotoGallery';
 import EnhancedLocation from './EnhancedLocation';
+import CustomIcon from './CustomIcon';
 
 interface SimpleSectionProps {
   id: string;
@@ -41,7 +42,9 @@ const SimpleSection = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text content */}
               <div>
-                <div className="text-8xl mb-6">{icon}</div>
+                <div className="mb-6">
+                  <CustomIcon type={icon} size={96} className="text-blue-600" />
+                </div>
                 <h2 className={`text-4xl md:text-5xl font-bold ${textColor} mb-6`}>
                   {title}
                 </h2>
@@ -72,7 +75,9 @@ const SimpleSection = ({
                   </div>
                 ) : (
                   <div className="text-center">
-                    <div className="text-6xl mb-4">{icon}</div>
+                    <div className="mb-4 flex justify-center">
+                      <CustomIcon type={icon} size={64} className="text-gray-600" />
+                    </div>
                     <h3 className="text-xl font-bold text-gray-800 mb-4">Premium Experience</h3>
                     <p className="text-gray-600">Discover what makes this location special</p>
                   </div>
@@ -101,7 +106,9 @@ const SimpleSection = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Content side */}
               <div className="order-2 lg:order-1">
-                <div className="text-6xl mb-6">{icon}</div>
+                <div className="mb-6">
+                  <CustomIcon type={icon} size={72} className="text-gray-700" />
+                </div>
                 <h2 className={`text-3xl md:text-4xl font-bold ${textColor} mb-4`}>
                   {title}
                 </h2>
@@ -133,7 +140,9 @@ const SimpleSection = ({
                     </div>
                   ) : (
                     <div className="text-center">
-                      <div className="text-8xl mb-4 opacity-20">{icon}</div>
+                      <div className="mb-4 opacity-20">
+                        <CustomIcon type={icon} size={96} className="text-gray-400" />
+                      </div>
                       <h3 className="text-xl font-bold text-gray-400">Preview Content</h3>
                     </div>
                   )}
@@ -160,7 +169,9 @@ const SimpleSection = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header */}
           <div className="text-center mb-12">
-            <div className="text-6xl mb-4">{icon}</div>
+            <div className="mb-4 flex justify-center">
+              <CustomIcon type={icon} size={64} className="text-gray-700" />
+            </div>
             <h2 className={`text-3xl md:text-4xl font-bold ${textColor} mb-4`}>
               {title}
             </h2>

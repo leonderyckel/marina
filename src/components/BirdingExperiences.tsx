@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Experience {
   id: string;
@@ -25,13 +26,13 @@ const experiences: Experience[] = [
     highlights: ['Marina birds', 'Wetlands species', 'Easy walk', 'Great for beginners']
   },
   {
-    id: 'cape-point',
-    icon: '🌊',
-    title: 'Full Day – Cape of Good Hope Nature Tour',
-    duration: 'Full day',
-    price: '3000 ZAR',
-    description: 'Explore the southern peninsula including Cape of Good Hope, Cape Point, and Olifantsbos area.',
-    highlights: ['Cape of Good Hope', 'Cape Point', 'Coastal fynbos', 'Ocean views', 'Mammals & birds']
+    id: 'more-activities',
+    icon: '📖',
+    title: 'More Activities Available',
+    duration: 'Various',
+    price: 'See Book',
+    description: 'Discover additional activities and excursions available. Check the house book for the complete list of owner-guided experiences.',
+    highlights: ['Cape Point tours', 'Private guided walks', 'Custom itineraries', 'Local expertise']
   },
   {
     id: 'stellenbosch',
@@ -101,6 +102,7 @@ const experiences: Experience[] = [
 
 const BirdingExperiences = () => {
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -110,8 +112,11 @@ const BirdingExperiences = () => {
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🌿</div>
             <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
-              Nature & Birding Experiences from Muizenberg Marina
+              {t('activitiesProposedByOwner')}
             </h2>
+            <p className="text-lg font-semibold text-green-700 mb-4">
+              {t('natureBirdingExperiences')}
+            </p>
             <div className="max-w-4xl mx-auto text-lg text-gray-700 space-y-4">
               <p>
                 I am a local ornithologist with deep knowledge of the birds, wildlife, and many coastal trails of the Cape Peninsula. 
@@ -164,7 +169,7 @@ const BirdingExperiences = () => {
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{experience.description}</p>
                 <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium">
-                  Learn More
+                  {t('learnMore')}
                 </button>
               </div>
             ))}
@@ -173,16 +178,16 @@ const BirdingExperiences = () => {
           {/* Contact CTA */}
           <div className="text-center mt-12">
             <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-green-900 mb-4">Ready for an Adventure?</h3>
+              <h3 className="text-2xl font-bold text-green-900 mb-4">{t('readyForAdventure')}</h3>
               <p className="text-gray-700 mb-6">
-                Book your personalized birding and nature experience directly with me during your stay.
+                {t('bookPersonalized')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">
-                  Contact Guide
+                  {t('contactGuide')}
                 </button>
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold">
-                  WhatsApp Booking
+                  {t('whatsappBooking')}
                 </button>
               </div>
             </div>
@@ -220,7 +225,7 @@ const BirdingExperiences = () => {
 
               {selectedExperience.highlights && (
                 <div className="mb-6">
-                  <h4 className="font-bold text-green-900 mb-3">Highlights:</h4>
+                  <h4 className="font-bold text-green-900 mb-3">{t('highlights')}</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {selectedExperience.highlights.map((highlight, index) => (
                       <div key={index} className="flex items-center text-sm text-gray-700">
@@ -234,13 +239,13 @@ const BirdingExperiences = () => {
 
               <div className="flex gap-4">
                 <button className="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">
-                  Book This Experience
+                  {t('bookThisExperience')}
                 </button>
                 <button 
                   onClick={() => setSelectedExperience(null)}
                   className="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-200 font-semibold"
                 >
-                  Close
+                  {t('close')}
                 </button>
               </div>
             </div>

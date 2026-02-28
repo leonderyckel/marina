@@ -3,9 +3,11 @@
 // Using standard img tag instead of Next.js Image
 import { useState } from 'react';
 import { siteConfig } from '@/data/simpleData';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const SimpleHero = () => {
   const [imageError, setImageError] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -35,28 +37,38 @@ const SimpleHero = () => {
         <div className="mb-6">
           <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
             <span className="mr-3">⭐⭐⭐⭐⭐</span>
-            <span className="font-semibold">5.0 • 50+ reviews</span>
+            <span className="font-semibold">{t('reviews')}</span>
             <span className="ml-3">🏆</span>
           </div>
         </div>
 
         {/* Main title */}
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          {siteConfig.title}
+          {t('title')}
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto">
-          {siteConfig.subtitle}
+          {t('subtitle')}
         </p>
         
         {/* Key features */}
         <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {siteConfig.keyFeatures.map((feature, index) => (
-            <div key={index} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="mr-2">{feature.icon}</span>
-              {feature.text}
-            </div>
-          ))}
+          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mr-2">🚲</span>
+            {t('freePedalos')}
+          </div>
+          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mr-2">🏄‍♂️</span>
+            {t('surfNearby')}
+          </div>
+          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mr-2">🌊</span>
+            {t('marinaView')}
+          </div>
+          <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="mr-2">🏠</span>
+            {t('fullyEquipped')}
+          </div>
         </div>
         
         {/* Action buttons */}
@@ -68,7 +80,7 @@ const SimpleHero = () => {
             className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105 shadow-2xl flex items-center justify-center"
           >
             <span className="mr-2">🏡</span>
-            Book Now
+            {t('bookNow')}
             <span className="ml-2">→</span>
           </a>
           
@@ -77,14 +89,14 @@ const SimpleHero = () => {
             className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 border border-white/30 flex items-center justify-center"
           >
             <span className="mr-2">📸</span>
-            Explore the House
+            {t('exploreHouse')}
           </a>
         </div>
 
         {/* Urgency message */}
         <div className="mt-8">
           <div className="inline-block bg-orange-500/20 backdrop-blur-sm text-orange-100 px-4 py-2 rounded-lg text-sm animate-pulse">
-            🔥 28 people viewed this property today
+            🔥 28 {t('peoplePlaceholder')}
           </div>
         </div>
       </div>

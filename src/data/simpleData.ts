@@ -4,9 +4,12 @@ export const sections = [
     id: 'house-exterior',
     title: 'House & Exterior',
     subtitle: 'Discover your marina-front retreat',
-    icon: '🏡',
+    titleKey: 'houseExterior',
+    subtitleKey: 'houseSubtitle',
+    descriptionKey: 'houseDescription',
+    icon: 'house',
     folder: 'exterior',
-    description: 'Modern interior and outdoor spaces with marina views',
+    description: 'Fully equipped modern house with outdoor spaces and marina views',
     backgroundColor: 'bg-blue-50',
     textColor: 'text-blue-900'
   },
@@ -14,32 +17,41 @@ export const sections = [
     id: 'bedrooms',
     title: 'Bedrooms',
     subtitle: 'Comfort and tranquility for all',
-    icon: '🛏️',
+    titleKey: 'bedrooms',
+    subtitleKey: 'bedroomsSubtitle',
+    descriptionKey: 'bedroomsDescription',
+    icon: 'bed',
     folder: 'chambers',
     description: '3 comfortable bedrooms with marina views',
     backgroundColor: 'bg-green-50',
     textColor: 'text-green-900'
   },
   {
-    id: 'activities',
-    title: 'Activities & Surroundings',
-    subtitle: 'Water sports and discoveries',
-    icon: '🚣',
-    folder: 'activities',
-    description: 'Free kayaking, surfing, and nearby attractions',
-    backgroundColor: 'bg-cyan-50',
-    textColor: 'text-cyan-900'
-  },
-  {
     id: 'location',
     title: 'Location & Points of Interest',
     subtitle: 'In the heart of Marina Da Gama',
-    icon: '📍',
+    titleKey: 'location',
+    subtitleKey: 'locationSubtitle',
+    descriptionKey: 'locationDescription',
+    icon: 'map-pin',
     folder: 'worship',
     description: 'Strategic position with all services nearby',
     backgroundColor: 'bg-purple-50',
     textColor: 'text-purple-900',
     showMap: true
+  },
+  {
+    id: 'activities',
+    title: 'Activities & Surroundings',
+    subtitle: 'Water sports and discoveries',
+    titleKey: 'activities',
+    subtitleKey: 'activitiesSubtitle',
+    descriptionKey: 'activitiesDescription',
+    icon: 'activity',
+    folder: 'activities',
+    description: 'Free pedalo rides, surfing, and nearby attractions. Be clever - book additional activities with the owner!',
+    backgroundColor: 'bg-cyan-50',
+    textColor: 'text-cyan-900'
   }
 ];
 
@@ -170,15 +182,15 @@ export const pointsOfInterest = [
 
 // General configuration
 export const siteConfig = {
-  title: "Marina Da Gama House - Marina View",
+  title: "Birdsong Castle",
   subtitle: "Peaceful stay by the marina in Muizenberg",
-  description: "Charming house in the peaceful Marina Da Gama neighborhood. Exceptional marina view, just minutes from famous Muizenberg Beach.",
+  description: "Fully equipped house in the peaceful Marina Da Gama neighborhood. Exceptional marina view, just minutes from famous Muizenberg Beach.",
   airbnbUrl: "https://airbnb.co.za/h/birdsongcastle",
   coordinates: [-34.0928, 18.4569], // Marina Da Gama
   keyFeatures: [
-    { icon: '🚣', text: 'Free Kayaks' },
+    { icon: '🚲', text: 'Free Pedalos' },
     { icon: '🏄‍♂️', text: 'Surf 3min away' },
     { icon: '🌊', text: 'Marina View' },
-    { icon: '🅿️', text: 'Private Parking' }
+    { icon: '🏠', text: 'Fully Equipped' }
   ]
 };
