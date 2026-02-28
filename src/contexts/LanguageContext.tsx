@@ -54,12 +54,6 @@ const translations = {
     activitiesProposedByOwner: 'Activities Proposed by Owner',
     natureBirdingExperiences: 'Nature & Birding Experiences from Muizenberg Marina',
     
-    // Key features
-    freePedalos: 'Free Pedalos',
-    surfNearby: 'Surf 3min away', 
-    marinaView: 'Marina View',
-    fullyEquipped: 'Fully Equipped',
-    
     // BirdingExperiences
     readyForAdventure: 'Ready for an Adventure?',
     bookPersonalized: 'Book your personalized birding and nature experience directly with me during your stay.',
@@ -112,12 +106,6 @@ const translations = {
     // Birding section
     activitiesProposedByOwner: 'Activités proposées par le propriétaire',
     natureBirdingExperiences: 'Expériences Nature & Ornithologie depuis Muizenberg Marina',
-    
-    // Key features
-    freePedalos: 'Pédalos gratuits',
-    surfNearby: 'Surf à 3min',
-    marinaView: 'Vue marina',
-    fullyEquipped: 'Entièrement équipé',
     
     // BirdingExperiences
     readyForAdventure: 'Prêt pour une aventure ?',
