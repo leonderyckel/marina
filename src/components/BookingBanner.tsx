@@ -2,16 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { siteConfig } from '@/data/propertyData';
+import { siteConfig } from '@/data/simpleData';
 
 const BookingBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showUrgency, setShowUrgency] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
+    // Check if banner was previously dismissed
+    const dismissed = localStorage.getItem('bookingBannerDismissed');
+    if (dismissed === 'true') {
+      setIsDismissed(true);
+      return;
+    }
+
     // Show banner after user scrolls down a bit
     const handleScroll = () => {
-      if (window.scrollY > 600 && !isVisible) {
+      if (window.scrollY > 600 && !isVisible && !isDismissed) {
         setIsVisible(true);
       }
     };
@@ -27,9 +35,15 @@ const BookingBanner = () => {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(urgencyTimer);
     };
-  }, [isVisible]);
+  }, [isVisible, isDismissed]);
 
-  if (!isVisible) return null;
+  const handleDismiss = () => {
+    setIsVisible(false);
+    setIsDismissed(true);
+    localStorage.setItem('bookingBannerDismissed', 'true');
+  };
+
+  if (!isVisible || isDismissed) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl">
@@ -74,8 +88,9 @@ const BookingBanner = () => {
               Book Now on Airbnb
             </a>
             <button
-              onClick={() => setIsVisible(false)}
-              className="text-white hover:text-gray-300 p-1"
+              onClick={handleDismiss}
+              className="text-white hover:text-gray-300 p-1 hover:bg-white/10 rounded-full transition-all duration-200"
+              title="Close banner"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>

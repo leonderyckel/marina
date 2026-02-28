@@ -192,5 +192,14 @@ export const siteConfig = {
     { icon: '🏄‍♂️', text: 'Surf 3min away' },
     { icon: '🌊', text: 'Marina View' },
     { icon: '🏠', text: 'Fully Equipped' }
-  ]
+  ],
+  bookingUrgency: {
+    enabled: true,
+    viewersToday: 28,
+    recentBookings: 12
+  },
+  specialOffers: {
+    enabled: true,
+    weeklyDiscount: 15
+  }
 };
