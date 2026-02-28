@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ImprovedPhotoGallery from './ImprovedPhotoGallery';
 import EnhancedLocation from './EnhancedLocation';
+import ActivitiesGrid from './ActivitiesGrid';
 import CustomIcon from './CustomIcon';
 
 interface SimpleSectionProps {
@@ -197,6 +198,11 @@ const SimpleSection = ({
                 <span className="ml-2">→</span>
               </button>
             </div>
+
+            {/* Activities Grid for activities section */}
+            {id === 'activities' && (
+              <ActivitiesGrid />
+            )}
 
             {/* Map if requested */}
             {showMap && (
