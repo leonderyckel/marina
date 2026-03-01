@@ -133,84 +133,54 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
         </button>
       </div>
 
-      {/* Zone photo principale */}
-      <div className="flex-1 flex items-center justify-center p-4 relative">
-        {photos.length > 1 && (
-          <>
-            <button
-              onClick={prevPhoto}
-              className="absolute left-6 z-10 text-white hover:text-gray-300 transition-all duration-200 hover:scale-110 bg-black/30 hover:bg-black/50 rounded-full p-3"
-            >
-              <ChevronLeftIcon className="h-8 w-8" />
-            </button>
-            
-            <button
-              onClick={nextPhoto}
-              className="absolute right-6 z-10 text-white hover:text-gray-300 transition-all duration-200 hover:scale-110 bg-black/30 hover:bg-black/50 rounded-full p-3"
-            >
-              <ChevronRightIcon className="h-8 w-8" />
-            </button>
-          </>
-        )}
-
-        <div className="relative max-w-6xl max-h-full">
-          {imageLoading && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
-            </div>
-          )}
-          
-          <img
-            src={currentPhoto.src}
-            alt={currentPhoto.alt}
-            className="max-h-[75vh] w-auto object-contain transition-opacity duration-300"
-            onLoad={() => setImageLoading(false)}
-            onError={() => setImageLoading(false)}
-          />
-        </div>
-      </div>
-
-      {/* Footer avec miniatures et infos */}
-      <div className="bg-black/50 backdrop-blur-sm p-6">
-        {/* Description de la photo */}
-        <div className="text-center mb-4">
-          <p className="text-white text-lg mb-2">{currentPhoto.description}</p>
-          {currentPhoto.category && (
-            <div className="inline-block bg-blue-500/20 backdrop-blur-sm px-3 py-1 rounded-full text-blue-200 text-sm mb-2">
-              {currentPhoto.category}
-            </div>
-          )}
-          <p className="text-gray-300 text-sm">
-            Photo {selectedPhoto + 1} sur {photos.length}
-          </p>
-        </div>
-
-        {/* Miniatures with vertical scrolling */}
-        {photos.length > 1 && (
-          <div className="max-w-4xl mx-auto">
-            <div className="max-h-32 overflow-y-auto overflow-x-hidden">
-              <div className="grid grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2 justify-items-center">
-                {photos.map((photo, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToPhoto(index)}
-                    className={`relative w-16 h-12 rounded-lg overflow-hidden transition-all duration-200 ${
-                      index === selectedPhoto 
-                        ? 'ring-2 ring-white scale-110' 
-                        : 'hover:scale-105 opacity-70 hover:opacity-100'
-                    }`}
-                  >
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
+      {/* Zone défilement vertical des photos */}
+      <div className="flex-1 overflow-y-auto p-4">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {photos.map((photo, index) => (
+            <div key={index} className="text-center">
+              {/* Image */}
+              <div className="relative mb-4">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl object-contain max-h-[70vh]"
+                  loading={index > 2 ? "lazy" : "eager"}
+                />
               </div>
+              
+              {/* Description et infos */}
+              <div className="text-white space-y-2">
+                <p className="text-lg font-medium">{photo.description}</p>
+                {photo.category && (
+                  <div className="inline-block bg-blue-500/20 backdrop-blur-sm px-3 py-1 rounded-full text-blue-200 text-sm">
+                    {photo.category}
+                  </div>
+                )}
+                <p className="text-gray-400 text-sm">
+                  Photo {index + 1} sur {photos.length}
+                </p>
+              </div>
+              
+              {/* Séparateur entre photos */}
+              {index < photos.length - 1 && (
+                <div className="mt-8 flex justify-center">
+                  <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                </div>
+              )}
             </div>
-          </div>
-        )}
+          ))}
+        </div>
+        
+        {/* Bouton pour remonter en haut */}
+        <div className="text-center mt-8 pb-8">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+          >
+            <span className="mr-2">↑</span>
+            Retour en haut
+          </button>
+        </div>
       </div>
     </div>
   );
