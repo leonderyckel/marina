@@ -12,7 +12,7 @@ interface SimpleSectionProps {
   subtitle: string;
   icon: string;
   folder: string;
-  description: string;
+  description: string | React.ReactNode;
   backgroundColor: string;
   textColor: string;
   showMap?: boolean;
