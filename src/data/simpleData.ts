@@ -92,6 +92,14 @@ export const pointsOfInterest = [
     coordinates: [-34.1200, 18.4550],
     description: 'Natural heated seawater tidal pool'
   },
+  {
+    name: 'Simon\'s Town',
+    type: 'village',
+    icon: '🐧',
+    distance: '25 min',
+    coordinates: [-34.1928, 18.4340],
+    description: 'Historic naval town with penguin colony and museums'
+  },
   
   // Wineries & Gastronomy
   {
@@ -111,10 +119,18 @@ export const pointsOfInterest = [
     description: 'South Africa\'s oldest wine estate'
   },
   {
+    name: 'The Glen Constantia',
+    type: 'wine',
+    icon: '🍾',
+    distance: '20 min',
+    coordinates: [-34.0250, 18.4150],
+    description: 'Boutique winery with exceptional wines and cellar tours'
+  },
+  {
     name: 'Steenberg Wine Estate',
     type: 'wine',
     icon: '🥂',
-    distance: '20 min',
+    distance: '15 min',
     coordinates: [-34.0800, 18.4300],
     description: 'Premium vineyard with gourmet restaurant'
   },
@@ -163,12 +179,12 @@ export const pointsOfInterest = [
     description: 'Land-based whale watching (June-November)'
   },
   {
-    name: 'V&A Waterfront',
+    name: 'V&A Waterfront, Cape Town Center',
     type: 'village',
     icon: '🛍️',
     distance: '35 min',
     coordinates: [-33.9024, 18.4190],
-    description: 'Shopping, restaurants and Two Oceans Aquarium'
+    description: 'Shopping, restaurants and Two Oceans Aquarium in Cape Town city center'
   },
   {
     name: 'Lion\'s Head Hike',
@@ -183,12 +199,12 @@ export const pointsOfInterest = [
 // General configuration
 export const siteConfig = {
   title: "Birdsong Castle",
-  subtitle: "Peaceful stay by the marina in Muizenberg",
+  subtitle: "Peaceful stay by the marina in Muizenberg, Cape Town, South Africa",
   description: "Fully equipped house in the peaceful Marina Da Gama neighborhood. Exceptional marina view, just minutes from famous Muizenberg Beach.",
   airbnbUrl: "https://airbnb.co.za/h/birdsongcastle",
   coordinates: [-34.1058, 18.4742], // 4 de Lille Square, Muizenberg
   keyFeatures: [
-    { icon: '🚲', text: 'Free Pedalos' },
+    { icon: '🚣‍♂️', text: 'Free Kayaks' },
     { icon: '🏄‍♂️', text: 'Surf 3min away' },
     { icon: '🌊', text: 'Marina View' },
     { icon: '🏠', text: 'Fully Equipped' }

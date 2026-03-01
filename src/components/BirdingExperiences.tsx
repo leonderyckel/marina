@@ -106,7 +106,7 @@ const BirdingExperiences = () => {
 
   return (
     <>
-      <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-100">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-100" data-section="birding-experiences">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
@@ -186,9 +186,15 @@ const BirdingExperiences = () => {
                 <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">
                   {t('contactGuide')}
                 </button>
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold">
+                <a 
+                  href="https://wa.me/27648994979" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold text-center flex items-center justify-center"
+                >
+                  <span className="mr-2">📱</span>
                   {t('whatsappBooking')}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -238,9 +244,15 @@ const BirdingExperiences = () => {
               )}
 
               <div className="flex gap-4">
-                <button className="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">
+                <a 
+                  href="https://wa.me/27648994979" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold text-center flex items-center justify-center"
+                >
+                  <span className="mr-2">📱</span>
                   {t('bookThisExperience')}
-                </button>
+                </a>
                 <button 
                   onClick={() => setSelectedExperience(null)}
                   className="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-200 font-semibold"

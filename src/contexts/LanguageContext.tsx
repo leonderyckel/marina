@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-export type Language = 'en' | 'fr';
+export type Language = 'en' | 'fr' | 'de' | 'it';
 
 interface LanguageContextType {
   language: Language;
@@ -17,14 +17,14 @@ const translations = {
     
     // Hero
     title: 'Birdsong Castle',
-    subtitle: 'Peaceful stay by the marina in Muizenberg',
+    subtitle: 'Peaceful stay by the marina in Muizenberg, Cape Town, South Africa',
     reviews: '5.0 • 50+ reviews',
     peoplePlaceholder: 'people viewed this property today',
     bookNow: 'Book Now',
     exploreHouse: 'Explore the House',
     
     // Features
-    freePedalos: 'Free Pedalos',
+    freePedalos: 'Free Kayaks',
     surfNearby: 'Surf 3min away',
     marinaView: 'Marina View',
     fullyEquipped: 'Fully Equipped',
@@ -75,14 +75,14 @@ const translations = {
     
     // Hero
     title: 'Birdsong Castle',
-    subtitle: 'Séjour paisible au bord de la marina à Muizenberg',
+    subtitle: 'Séjour paisible au bord de la marina à Muizenberg, Cape Town, Afrique du Sud',
     reviews: '5.0 • 50+ avis',
     peoplePlaceholder: 'personnes ont consulté cette propriété aujourd\'hui',
     bookNow: 'Réserver maintenant',
     exploreHouse: 'Découvrir la maison',
     
     // Features
-    freePedalos: 'Pédalos gratuits',
+    freePedalos: 'Kayaks gratuits',
     surfNearby: 'Surf à 3min',
     marinaView: 'Vue marina',
     fullyEquipped: 'Entièrement équipé',
@@ -126,6 +126,122 @@ const translations = {
     worshipPlaces: 'Lieux de Culte',
     worshipDescription: 'Découvrez les beaux sites religieux autour de Muizenberg',
     worshipContent: 'Visitez les diverses communautés religieuses de notre région - églises anglicanes, églises catholiques, églises protestantes, et la synagogue locale.',
+  },
+  de: {
+    // Header
+    bookOnAirbnb: 'Auf Airbnb buchen',
+    
+    // Hero
+    title: 'Birdsong Castle',
+    subtitle: 'Ruhiger Aufenthalt am Yachthafen in Muizenberg, Kapstadt, Südafrika',
+    reviews: '5.0 • 50+ Bewertungen',
+    peoplePlaceholder: 'Personen haben heute diese Unterkunft angesehen',
+    bookNow: 'Jetzt buchen',
+    exploreHouse: 'Haus erkunden',
+    
+    // Features
+    freePedalos: 'Kostenlose Kajaks',
+    surfNearby: 'Surfen 3 Min entfernt',
+    marinaView: 'Marina-Blick',
+    fullyEquipped: 'Voll ausgestattet',
+    
+    // Sections
+    houseExterior: 'Haus & Außenbereich',
+    houseSubtitle: 'Entdecken Sie Ihren Marina-Rückzugsort',
+    houseDescription: 'Voll ausgestattetes modernes Haus mit Außenbereichen und Marina-Blick',
+    
+    bedrooms: 'Schlafzimmer',
+    bedroomsSubtitle: 'Komfort und Ruhe für alle',
+    bedroomsDescription: '3 komfortable Schlafzimmer mit Marina-Blick',
+    
+    location: 'Lage & Sehenswürdigkeiten',
+    locationSubtitle: 'Im Herzen von Marina Da Gama',
+    locationDescription: 'Strategische Lage mit allen Dienstleistungen in der Nähe',
+    
+    activities: 'Aktivitäten & Umgebung',
+    activitiesSubtitle: 'Wassersport und Entdeckungen',
+    activitiesDescription: 'Kostenlose Kajak-Fahrten, Surfen und Attraktionen in der Nähe. Seien Sie schlau - buchen Sie zusätzliche Aktivitäten beim Eigentümer!',
+    
+    // Common
+    viewPhotos: 'Fotos ansehen',
+    explorePhotos: 'Fotos entdecken',
+    
+    // Birding section
+    activitiesProposedByOwner: 'Aktivitäten vom Eigentümer',
+    natureBirdingExperiences: 'Natur & Vogelbeobachtung von Muizenberg Marina',
+    
+    // BirdingExperiences
+    readyForAdventure: 'Bereit für ein Abenteuer?',
+    bookPersonalized: 'Buchen Sie Ihr persönliches Natur- und Vogelbeobachtungserlebnis direkt bei mir während Ihres Aufenthalts.',
+    contactGuide: 'Guide kontaktieren',
+    whatsappBooking: 'WhatsApp Buchung',
+    learnMore: 'Mehr erfahren',
+    bookThisExperience: 'Diese Erfahrung buchen',
+    close: 'Schließen',
+    highlights: 'Höhepunkte:',
+    
+    // Worship Section
+    worshipPlaces: 'Gebetsstätten',
+    worshipDescription: 'Entdecken Sie die schönen religiösen Stätten rund um Muizenberg',
+    worshipContent: 'Besuchen Sie die vielfältigen Religionsgemeinschaften unserer Region - anglikanische Kirchen, katholische Kirchen, protestantische Kirchen und die örtliche Synagoge.',
+  },
+  it: {
+    // Header
+    bookOnAirbnb: 'Prenota su Airbnb',
+    
+    // Hero
+    title: 'Birdsong Castle',
+    subtitle: 'Soggiorno tranquillo presso la marina di Muizenberg, Cape Town, Sud Africa',
+    reviews: '5.0 • 50+ recensioni',
+    peoplePlaceholder: 'persone hanno visualizzato questa proprietà oggi',
+    bookNow: 'Prenota ora',
+    exploreHouse: 'Esplora la casa',
+    
+    // Features
+    freePedalos: 'Kayak gratuiti',
+    surfNearby: 'Surf a 3 min',
+    marinaView: 'Vista marina',
+    fullyEquipped: 'Completamente attrezzato',
+    
+    // Sections
+    houseExterior: 'Casa & Esterno',
+    houseSubtitle: 'Scopri il tuo rifugio fronte marina',
+    houseDescription: 'Casa moderna completamente attrezzata con spazi esterni e vista marina',
+    
+    bedrooms: 'Camere da letto',
+    bedroomsSubtitle: 'Comfort e tranquillità per tutti',
+    bedroomsDescription: '3 camere da letto confortevoli con vista marina',
+    
+    location: 'Posizione & Punti di interesse',
+    locationSubtitle: 'Nel cuore di Marina Da Gama',
+    locationDescription: 'Posizione strategica con tutti i servizi nelle vicinanze',
+    
+    activities: 'Attività & Dintorni',
+    activitiesSubtitle: 'Sport acquatici e scoperte',
+    activitiesDescription: 'Gite gratuite in kayak, surf e attrazioni nelle vicinanze. Sii furbo - prenota attività aggiuntive con il proprietario!',
+    
+    // Common
+    viewPhotos: 'Visualizza foto',
+    explorePhotos: 'Esplora foto',
+    
+    // Birding section
+    activitiesProposedByOwner: 'Attività proposte dal proprietario',
+    natureBirdingExperiences: 'Esperienze natura & birdwatching da Muizenberg Marina',
+    
+    // BirdingExperiences
+    readyForAdventure: 'Pronto per un\'avventura?',
+    bookPersonalized: 'Prenota la tua esperienza personalizzata di natura e birdwatching direttamente con me durante il tuo soggiorno.',
+    contactGuide: 'Contatta la guida',
+    whatsappBooking: 'Prenotazione WhatsApp',
+    learnMore: 'Per saperne di più',
+    bookThisExperience: 'Prenota questa esperienza',
+    close: 'Chiudi',
+    highlights: 'Punti salienti:',
+    
+    // Worship Section
+    worshipPlaces: 'Luoghi di culto',
+    worshipDescription: 'Scopri i bellissimi siti religiosi intorno a Muizenberg',
+    worshipContent: 'Visita le diverse comunità religiose della nostra zona - chiese anglicane, chiese cattoliche, chiese protestanti e la sinagoga locale.',
   }
 };
 

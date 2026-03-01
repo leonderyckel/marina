@@ -54,7 +54,7 @@ const SimpleHero = () => {
         {/* Key features */}
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-            <span className="mr-2">🚲</span>
+            <span className="mr-2">🚣‍♂️</span>
             {t('freePedalos')}
           </div>
           <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
@@ -72,7 +72,7 @@ const SimpleHero = () => {
         </div>
         
         {/* Action buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <a
             href={siteConfig.airbnbUrl}
             target="_blank"
@@ -82,14 +82,6 @@ const SimpleHero = () => {
             <span className="mr-2">🏡</span>
             {t('bookNow')}
             <span className="ml-2">→</span>
-          </a>
-          
-          <a
-            href="#house-exterior"
-            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 border border-white/30 flex items-center justify-center"
-          >
-            <span className="mr-2">📸</span>
-            {t('exploreHouse')}
           </a>
         </div>
 

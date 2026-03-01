@@ -185,26 +185,30 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
           </p>
         </div>
 
-        {/* Miniatures */}
+        {/* Miniatures with vertical scrolling */}
         {photos.length > 1 && (
-          <div className="flex justify-center gap-2 overflow-x-auto pb-2">
-            {photos.map((photo, index) => (
-              <button
-                key={index}
-                onClick={() => goToPhoto(index)}
-                className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden transition-all duration-200 ${
-                  index === selectedPhoto 
-                    ? 'ring-2 ring-white scale-110' 
-                    : 'hover:scale-105 opacity-70 hover:opacity-100'
-                }`}
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="max-h-32 overflow-y-auto overflow-x-hidden">
+              <div className="grid grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2 justify-items-center">
+                {photos.map((photo, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToPhoto(index)}
+                    className={`relative w-16 h-12 rounded-lg overflow-hidden transition-all duration-200 ${
+                      index === selectedPhoto 
+                        ? 'ring-2 ring-white scale-110' 
+                        : 'hover:scale-105 opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>
