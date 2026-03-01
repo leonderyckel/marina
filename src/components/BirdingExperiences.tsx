@@ -182,15 +182,12 @@ const BirdingExperiences = () => {
               <p className="text-gray-700 mb-6">
                 {t('bookPersonalized')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">
-                  {t('contactGuide')}
-                </button>
+              <div className="flex justify-center">
                 <a 
                   href="https://wa.me/27648994979" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold text-center flex items-center justify-center"
+                  className="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold text-center flex items-center justify-center text-lg"
                 >
                   <span className="mr-2">📱</span>
                   {t('whatsappBooking')}

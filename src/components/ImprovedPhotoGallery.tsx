@@ -43,7 +43,19 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
       const data = await response.json();
       
       if (response.ok && data.photos && data.photos.length > 0) {
-        setPhotos(data.photos);
+        let organizedPhotos = data.photos;
+        
+        // Réorganiser les photos worship : photo 3 en première, première en dernière
+        if (folder === 'worship' && organizedPhotos.length >= 3) {
+          const firstPhoto = organizedPhotos[0];
+          const thirdPhoto = organizedPhotos[2];
+          organizedPhotos[0] = thirdPhoto;
+          organizedPhotos[2] = firstPhoto;
+          // Déplacer la première photo (maintenant en position 2) à la fin
+          organizedPhotos.push(organizedPhotos.splice(2, 1)[0]);
+        }
+        
+        setPhotos(organizedPhotos);
       } else {
         setPhotos([]);
       }
@@ -148,14 +160,8 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
                 />
               </div>
               
-              {/* Description et infos */}
-              <div className="text-white space-y-2">
-                <p className="text-lg font-medium">{photo.description}</p>
-                {photo.category && (
-                  <div className="inline-block bg-blue-500/20 backdrop-blur-sm px-3 py-1 rounded-full text-blue-200 text-sm">
-                    {photo.category}
-                  </div>
-                )}
+              {/* Compteur photo seulement */}
+              <div className="text-white mt-4">
                 <p className="text-gray-400 text-sm">
                   Photo {index + 1} sur {photos.length}
                 </p>
