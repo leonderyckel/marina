@@ -10,6 +10,7 @@ import BirdingExperiences from '@/components/BirdingExperiences';
 import WorshipSection from '@/components/WorshipSection';
 import BookingBanner from '@/components/BookingBanner';
 import CustomIcon from '@/components/CustomIcon';
+import PhotoMosaic from '@/components/PhotoMosaic';
 import { sections } from '@/data/simpleData';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -69,34 +70,31 @@ export default function Home() {
                       {t(section.descriptionKey)}
                     </p>
                     
-                    {/* Enhanced call-to-action */}
-                    <div className="space-y-4">
-                      <button
-                        onClick={() => setActiveGallery({ folder: section.folder, title: t(section.titleKey) })}
-                        className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-blue-600 hover:via-purple-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105 shadow-xl group-hover:shadow-2xl"
-                      >
-                        <span className="mr-3">📸</span>
-                        {t('explorePhotos')}
-                        <span className="ml-3">✨</span>
-                      </button>
-                      
-                      {/* Additional feature highlights */}
-                      <div className="flex justify-center space-x-6 text-sm text-gray-600">
-                        {section.id === 'house-exterior' && (
-                          <>
-                            <span className="flex items-center"><span className="mr-1">🌊</span>Marina Views</span>
-                            <span className="flex items-center"><span className="mr-1">🏊‍♂️</span>Private Pool</span>
-                            <span className="flex items-center"><span className="mr-1">🌿</span>Garden Terrace</span>
-                          </>
-                        )}
-                        {section.id === 'bedrooms' && (
-                          <>
-                            <span className="flex items-center"><span className="mr-1">🛏️</span>3 Bedrooms</span>
-                            <span className="flex items-center"><span className="mr-1">🌅</span>Morning Views</span>
-                            <span className="flex items-center"><span className="mr-1">💤</span>Peaceful Rest</span>
-                          </>
-                        )}
-                      </div>
+                    {/* Mosaïque de photos */}
+                    <div className="mb-6">
+                      <PhotoMosaic
+                        folder={section.folder}
+                        title={t(section.titleKey)}
+                        onViewGallery={() => setActiveGallery({ folder: section.folder, title: t(section.titleKey) })}
+                      />
+                    </div>
+                    
+                    {/* Additional feature highlights */}
+                    <div className="flex justify-center space-x-6 text-sm text-gray-600">
+                      {section.id === 'house-exterior' && (
+                        <>
+                          <span className="flex items-center"><span className="mr-1">🌊</span>Marina Views</span>
+                          <span className="flex items-center"><span className="mr-1">🏊‍♂️</span>Private Pool</span>
+                          <span className="flex items-center"><span className="mr-1">🌿</span>Garden Terrace</span>
+                        </>
+                      )}
+                      {section.id === 'bedrooms' && (
+                        <>
+                          <span className="flex items-center"><span className="mr-1">🛏️</span>3 Bedrooms</span>
+                          <span className="flex items-center"><span className="mr-1">🌅</span>Morning Views</span>
+                          <span className="flex items-center"><span className="mr-1">💤</span>Peaceful Rest</span>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

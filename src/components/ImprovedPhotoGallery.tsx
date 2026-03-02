@@ -145,47 +145,70 @@ const ImprovedPhotoGallery = ({ folder, title, isOpen, onClose }: ImprovedPhotoG
         </button>
       </div>
 
-      {/* Zone défilement vertical des photos */}
+      {/* Zone défilement vertical des photos - Design amélioré */}
       <div className="flex-1 overflow-y-auto p-4">
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-12">
           {photos.map((photo, index) => (
-            <div key={index} className="text-center">
-              {/* Image */}
-              <div className="relative mb-4">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl object-contain max-h-[70vh]"
-                  loading={index > 2 ? "lazy" : "eager"}
-                />
+            <div key={index} className="group">
+              {/* Conteneur photo avec effets */}
+              <div className="relative">
+                {/* Numéro de photo en overlay */}
+                <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {index + 1} / {photos.length}
+                </div>
+                
+                {/* Image principale */}
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="w-full max-w-4xl mx-auto object-cover max-h-[80vh] transition-all duration-300 group-hover:scale-105"
+                    loading={index > 2 ? "lazy" : "eager"}
+                  />
+                  
+                  {/* Overlay gradient au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                </div>
               </div>
               
-              {/* Compteur photo seulement */}
-              <div className="text-white mt-4">
-                <p className="text-gray-400 text-sm">
-                  Photo {index + 1} sur {photos.length}
-                </p>
-              </div>
-              
-              {/* Séparateur entre photos */}
+              {/* Indicateur de scroll pour la prochaine photo */}
               {index < photos.length - 1 && (
-                <div className="mt-8 flex justify-center">
-                  <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                <div className="flex justify-center mt-8">
+                  <div className="flex flex-col items-center text-white/60 animate-bounce">
+                    <div className="w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent"></div>
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2"></div>
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
         
-        {/* Bouton pour remonter en haut */}
-        <div className="text-center mt-8 pb-8">
+        {/* Navigation et actions */}
+        <div className="text-center mt-12 pb-8 space-y-4">
+          {/* Retour en haut */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+            onClick={() => {
+              const gallery = document.querySelector('.fixed.inset-0');
+              if (gallery) {
+                gallery.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl transition-all duration-200 backdrop-blur-sm font-medium"
           >
             <span className="mr-2">↑</span>
             Retour en haut
           </button>
+          
+          {/* Bouton fermer alternatif */}
+          <div>
+            <button
+              onClick={onClose}
+              className="text-white/60 hover:text-white transition-colors duration-200 text-sm"
+            >
+              Fermer la galerie ✕
+            </button>
+          </div>
         </div>
       </div>
     </div>
