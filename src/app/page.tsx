@@ -47,8 +47,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {sections.filter(s => s.id === 'house-exterior' || s.id === 'bedrooms').map((section, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {sections.filter(s => s.id === 'house-exterior' || s.id === 'bedrooms' || s.id === 'bathrooms').map((section, index) => (
               <div key={section.id} className={`group hover:scale-105 transition-all duration-300`}>
                 <div className={`${section.backgroundColor} rounded-3xl p-10 shadow-xl border border-white/50 h-full relative overflow-hidden`}>
                   {/* Decorative gradient overlay */}
@@ -90,9 +90,16 @@ export default function Home() {
                       )}
                       {section.id === 'bedrooms' && (
                         <>
-                          <span className="flex items-center"><span className="mr-1">🛏️</span>3 Bedrooms</span>
+                          <span className="flex items-center"><span className="mr-1">🛏️</span>4 Bedrooms</span>
                           <span className="flex items-center"><span className="mr-1">🌅</span>Morning Views</span>
                           <span className="flex items-center"><span className="mr-1">💤</span>Peaceful Rest</span>
+                        </>
+                      )}
+                      {section.id === 'bathrooms' && (
+                        <>
+                          <span className="flex items-center"><span className="mr-1">🚿</span>2.5 Bathrooms</span>
+                          <span className="flex items-center"><span className="mr-1">✨</span>Premium Fixtures</span>
+                          <span className="flex items-center"><span className="mr-1">🧴</span>Modern Design</span>
                         </>
                       )}
                     </div>

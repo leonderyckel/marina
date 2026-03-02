@@ -22,9 +22,22 @@ export const sections = [
     descriptionKey: 'bedroomsDescription',
     icon: 'bed',
     folder: 'chambers',
-    description: '3 comfortable bedrooms with marina views',
+    description: '4 comfortable bedrooms with marina views',
     backgroundColor: 'bg-green-50',
     textColor: 'text-green-900'
+  },
+  {
+    id: 'bathrooms',
+    title: 'Bathrooms',
+    subtitle: 'Modern and luxurious amenities',
+    titleKey: 'bathrooms',
+    subtitleKey: 'bathroomsSubtitle',
+    descriptionKey: 'bathroomsDescription',
+    icon: 'bath',
+    folder: 'bathrooms',
+    description: '2.5 modern bathrooms with premium fixtures',
+    backgroundColor: 'bg-indigo-50',
+    textColor: 'text-indigo-900'
   },
   {
     id: 'location',

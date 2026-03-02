@@ -36,7 +36,11 @@ const translations = {
     
     bedrooms: 'Bedrooms',
     bedroomsSubtitle: 'Comfort and tranquility for all',
-    bedroomsDescription: '3 comfortable bedrooms with marina views',
+    bedroomsDescription: '4 comfortable bedrooms with marina views',
+    
+    bathrooms: 'Bathrooms',
+    bathroomsSubtitle: 'Modern and luxurious amenities',
+    bathroomsDescription: '2.5 modern bathrooms with premium fixtures',
     
     location: 'Location & Points of Interest',
     locationSubtitle: 'In the heart of Marina Da Gama',
@@ -94,7 +98,11 @@ const translations = {
     
     bedrooms: 'Chambres',
     bedroomsSubtitle: 'Confort et tranquillité pour tous',
-    bedroomsDescription: '3 chambres confortables avec vue sur la marina',
+    bedroomsDescription: '4 chambres confortables avec vue sur la marina',
+    
+    bathrooms: 'Salles de bain',
+    bathroomsSubtitle: 'Équipements modernes et luxueux',
+    bathroomsDescription: '2.5 salles de bain modernes avec équipements haut de gamme',
     
     location: 'Localisation & Points d\'Intérêt',
     locationSubtitle: 'Au cœur de Marina Da Gama',
@@ -152,7 +160,11 @@ const translations = {
     
     bedrooms: 'Schlafzimmer',
     bedroomsSubtitle: 'Komfort und Ruhe für alle',
-    bedroomsDescription: '3 komfortable Schlafzimmer mit Marina-Blick',
+    bedroomsDescription: '4 komfortable Schlafzimmer mit Marina-Blick',
+    
+    bathrooms: 'Badezimmer',
+    bathroomsSubtitle: 'Moderne und luxuriöse Ausstattung',
+    bathroomsDescription: '2,5 moderne Badezimmer mit Premium-Armaturen',
     
     location: 'Lage & Sehenswürdigkeiten',
     locationSubtitle: 'Im Herzen von Marina Da Gama',
@@ -210,7 +222,11 @@ const translations = {
     
     bedrooms: 'Camere da letto',
     bedroomsSubtitle: 'Comfort e tranquillità per tutti',
-    bedroomsDescription: '3 camere da letto confortevoli con vista marina',
+    bedroomsDescription: '4 camere da letto confortevoli con vista marina',
+    
+    bathrooms: 'Bagni',
+    bathroomsSubtitle: 'Servizi moderni e lussuosi',
+    bathroomsDescription: '2,5 bagni moderni con accessori di qualità',
     
     location: 'Posizione & Punti di interesse',
     locationSubtitle: 'Nel cuore di Marina Da Gama',

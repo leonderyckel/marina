@@ -16,7 +16,7 @@ export async function GET(
     const { folder } = await params;
     
     // Sécurité : seulement autoriser certains dossiers
-    const allowedFolders = ['our-house', 'exterior', 'activities', 'worship', 'chambers'];
+    const allowedFolders = ['our-house', 'exterior', 'activities', 'worship', 'chambers', 'bathrooms'];
     if (!allowedFolders.includes(folder)) {
       return NextResponse.json({ error: 'Folder not allowed' }, { status: 403 });
     }
@@ -76,6 +76,9 @@ export async function GET(
           case 'chambers':
             // Chambres uniquement - photos avec "chambre" dans le nom
             return publicId.includes('chambre') && !filename.startsWith('dsc_');
+          case 'bathrooms':
+            // Salles de bain - photos avec "salle_de_bain" dans le nom
+            return publicId.includes('salle_de_bain');
           default:
             return false;
         }
