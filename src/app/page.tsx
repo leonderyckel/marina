@@ -47,26 +47,26 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {sections.filter(s => s.id === 'house-exterior' || s.id === 'bedrooms' || s.id === 'bathrooms').map((section, index) => (
-              <div key={section.id} className={`group hover:scale-105 transition-all duration-300`}>
-                <div className={`${section.backgroundColor} rounded-3xl p-10 shadow-xl border border-white/50 h-full relative overflow-hidden`}>
+              <div key={section.id} className={`group hover:scale-[1.02] transition-all duration-300`}>
+                <div className={`${section.backgroundColor} rounded-3xl p-8 shadow-2xl border border-white/60 h-full relative overflow-hidden`}>
                   {/* Decorative gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="text-center mb-8 relative z-10">
-                    <div className="mb-6 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
-                      <div className="bg-white/80 p-4 rounded-2xl shadow-lg">
-                        <CustomIcon type={section.icon} size={72} className="text-blue-600" />
+                    <div className="mb-8 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+                      <div className="bg-white/90 p-6 rounded-3xl shadow-xl border border-white/70">
+                        <CustomIcon type={section.icon} size={80} className="text-blue-600" />
                       </div>
                     </div>
-                    <h3 className={`text-3xl md:text-4xl font-bold ${section.textColor} mb-4`}>
+                    <h3 className={`text-2xl md:text-3xl font-bold ${section.textColor} mb-3`}>
                       {t(section.titleKey)}
                     </h3>
-                    <p className="text-lg text-gray-600 mb-6 font-medium">
+                    <p className="text-lg text-gray-600 mb-4 font-medium">
                       {t(section.subtitleKey)}
                     </p>
-                    <p className={`text-lg ${section.textColor} mb-8 leading-relaxed`}>
+                    <p className={`text-base ${section.textColor} mb-6 leading-relaxed`}>
                       {t(section.descriptionKey)}
                     </p>
                     

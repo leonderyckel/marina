@@ -120,6 +120,15 @@ export async function GET(
           }
         }
         
+        // Prioriser salle_de_bain_2_c14eql.jpg pour bathrooms
+        if (folder === 'bathrooms') {
+          const aIsLast = a.filename.toLowerCase().includes('salle_de_bain_2_c14eql');
+          const bIsLast = b.filename.toLowerCase().includes('salle_de_bain_2_c14eql');
+          
+          if (aIsLast && !bIsLast) return -1;
+          if (!aIsLast && bIsLast) return 1;
+        }
+        
         if (a.category !== b.category) {
           const categoryOrder = ['piscine', 'terrasse', 'vue', 'marina', 'salon', 'cuisine', 'chambre', 'salle_bain', 'plage', 'general'];
           return categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
