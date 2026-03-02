@@ -14,7 +14,7 @@ import { sections } from '@/data/simpleData';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeGallery, setActiveGallery] = useState<{ folder: string; title: string } | null>(null);
   return (
     <Layout>
@@ -30,15 +30,19 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
               <span className="text-2xl mr-3">🏡</span>
-              <span className="font-semibold text-gray-700">Welcome to your Marina Paradise</span>
+              <span className="font-semibold text-gray-700">
+                {language === 'fr' ? 'Bienvenue dans votre Paradis de la Marina' : 'Welcome to your Marina Paradise'}
+              </span>
               <span className="text-2xl ml-3">✨</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Your Perfect Retreat Awaits
+              {language === 'fr' ? 'Votre Retraite Parfaite Vous Attend' : 'Your Perfect Retreat Awaits'}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover beautifully designed spaces where comfort meets stunning marina views, 
-              creating the perfect atmosphere for your Cape Town getaway.
+              {language === 'fr' 
+                ? 'Découvrez des espaces magnifiquement conçus où le confort rencontre des vues spectaculaires sur la marina, créant l\'atmosphère parfaite pour votre escapade au Cap.'
+                : 'Discover beautifully designed spaces where comfort meets stunning marina views, creating the perfect atmosphere for your Cape Town getaway.'
+              }
             </p>
           </div>
 
@@ -104,8 +108,16 @@ export default function Home() {
           <div className="text-center mt-16">
             <div className="inline-flex items-center bg-white/90 backdrop-blur-sm px-8 py-4 rounded-full shadow-lg">
               <span className="text-lg text-gray-600">
-                🌟 Ready to experience the magic? 
-                <span className="font-semibold text-blue-600 ml-2">Your perfect stay starts here</span>
+                {language === 'fr' 
+                  ? '🌟 Prêt à vivre la magie ? '
+                  : '🌟 Ready to experience the magic? '
+                }
+                <span className="font-semibold text-blue-600 ml-2">
+                  {language === 'fr' 
+                    ? 'Votre séjour parfait commence ici'
+                    : 'Your perfect stay starts here'
+                  }
+                </span>
               </span>
             </div>
           </div>

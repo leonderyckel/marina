@@ -37,8 +37,9 @@ export async function GET(
         
         switch (folder) {
           case 'exterior':
-            // Photos extérieures: piscine, terrasse, vue marina - DSC photos des espaces externes
-            return (publicId.includes('dsc_') && 
+            // Photos extérieures: nouvelles photos WhatsApp en premier + DSC photos des espaces externes
+            return publicId.includes('whatsapp_image_2026-03-01_at_20.37.50') ||
+                   (publicId.includes('dsc_') && 
                    (filename.includes('dsc_183') || filename.includes('dsc_184') || filename.includes('dsc_185') || 
                     filename.includes('dsc_186') || filename.includes('dsc_187') || filename.includes('dsc_188'))) ||
                    publicId.includes('marina') || publicId.includes('view');
@@ -102,6 +103,20 @@ export async function GET(
         };
       })
       .sort((a, b) => {
+        // Prioriser les nouvelles photos WhatsApp pour exterior
+        if (folder === 'exterior') {
+          const aIsWhatsApp = a.filename.toLowerCase().includes('whatsapp_image_2026-03-01_at_20.37.50');
+          const bIsWhatsApp = b.filename.toLowerCase().includes('whatsapp_image_2026-03-01_at_20.37.50');
+          
+          if (aIsWhatsApp && !bIsWhatsApp) return -1;
+          if (!aIsWhatsApp && bIsWhatsApp) return 1;
+          
+          // Entre les 2 photos WhatsApp, trier par filename
+          if (aIsWhatsApp && bIsWhatsApp) {
+            return a.filename.localeCompare(b.filename);
+          }
+        }
+        
         if (a.category !== b.category) {
           const categoryOrder = ['piscine', 'terrasse', 'vue', 'marina', 'salon', 'cuisine', 'chambre', 'salle_bain', 'plage', 'general'];
           return categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
